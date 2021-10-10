@@ -11,7 +11,7 @@ app
     if (type === "CommentCreated") {
       const status = data.content.includes("orange") ? "rejected" : "approved";
 
-      await axios.posh("http:localhost:4005/events", {
+      await axios.posh("http:event-bus-srv:4005/events", {
         type: "CommentModerated",
         data: {
           id: data.id,
